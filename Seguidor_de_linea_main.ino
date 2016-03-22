@@ -98,7 +98,7 @@ void movimiento_stop(int spd_stop){
 
 //LECTURA DE SENSORES CON BUCLE
 
-int lectura_sensor_derecho_data(){
+  int lectura_sensor_derecho_data(){
   int data = 0;
   data += analogRead(SENSOR6);             //LECTURA SENSOR-6
   return data;
@@ -110,8 +110,7 @@ int lectura_sensor_derecho_data(){
   return data;
   }
 
-
-int lectura_sensor_izquierdo_data(){
+  int lectura_sensor_izquierdo_data(){
   int data = 0;
   data += analogRead(SENSOR2);                //LECTURA SENSOR-2
   return data;
@@ -124,21 +123,17 @@ int lectura_sensor_izquierdo_data(){
   }
 
 
-
-int lectura_sensor_central_data(){
+  int lectura_sensor_central_data(){
   int data = 0;
   data += analogRead(SENSOR4);             //LECTURA SENSOR-4 x2
   return data;
   }
 
-
-
-int lectura_sensor_central_data2(){
+  int lectura_sensor_central_data2(){
   int data = 0;
   data += analogRead(SENSOR5);             //LECTURA SENSOR-5 x2
   return(data);
   }
-
 
 
 //Especificación de velocidades constantes
@@ -190,7 +185,7 @@ void loop(){
   //REVISAR VALORES DE UMBRALES
   //CONDICIONALES BASE DE LECTURA DE LOS SENSORES
 
-  //GIROS IZQUIERDA
+  //GIROS IZQUIERDA-4 Variables
   
   if(sensor_izquierdo_data > 375 && sensor_izquierdo_data2 > 375 && sensor_central_data < 375 
   && sensor_central_data2 < 375 && sensor_derecho_data < 375 && sensor_derecho_data2 < 375)
@@ -200,7 +195,7 @@ void loop(){
   else if(sensor_izquierdo_data > 375 && sensor_izquierdo_data2 < 375 && sensor_central_data < 375 
   && sensor_central_data2 < 375 && sensor_derecho_data < 375 && sensor_derecho_data2 < 375)
     {                                                                                        //Sensor 2 en negro, 3,4,5,6,7 en blanco. Gira a la izquierda.
-            
+    
       movimiento_izquierda(spd1);                                                                      //Asignada velocidad de curva "spd1" en 120
     }
   else if(sensor_izquierdo_data > 375 && sensor_izquierdo_data2 > 375 && sensor_central_data > 375 
@@ -214,7 +209,7 @@ void loop(){
     movimiento_izquierda(spd1);
   }
 
-  //GIROS DERECHA
+  //GIROS DERECHA-4 Variables
   
   else if(sensor_izquierdo_data < 375 && sensor_izquierdo_data2 < 375 && sensor_central_data < 375
       && sensor_central_data2 < 375 && sensor_derecho_data < 375 && sensor_derecho_data2 > 375)  //Sensor 7 negro, 2,3,4,5,6 blanco. Gira a la derecha
@@ -259,9 +254,3 @@ void loop(){
     
   }
 }
-
-
-
-
-
-
