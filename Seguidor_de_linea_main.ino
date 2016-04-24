@@ -248,7 +248,7 @@ void loop(){
       {                                 
         movimiento_stop(spd_stop);                                                                         //Función de parar
       }
-  else
+  else if
   {
         movimiento_recto_b(spdstr_b);                                                           //Asignada velocidad de línea recta MARCHA ATRÁS "spdstr_b" en 150
     
