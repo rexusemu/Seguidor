@@ -7,24 +7,10 @@
 QTRSensorsRC qtrrc((unsigned char[]) {19, 18, 17, 16,15,14,11,12},
   NUM_SENSORS, TIMEOUT, EMITTER_PIN); 
 unsigned int sensorValues[NUM_SENSORS];
-int limite=500;
-int vel=150;
-int correccion=100;
-int correccion1=100;
-int retardo=100;
 
 
 void setup()
-{
- Serial.begin(9600); 
-pinMode(7,OUTPUT);
-pinMode(9,OUTPUT); 
 
-
-pinMode(8,OUTPUT);  
-pinMode(10,OUTPUT); 
-
-}
 void loop() {
 
    // read raw sensor values
